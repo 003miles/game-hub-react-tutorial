@@ -4,11 +4,11 @@ import { Platform } from "./usePlatforms";
 import ms from "ms";
 import useGameQueryStore from "../store";
 
-// this is to test the at thst hd
-
 export interface Game {
   id: number;
   name: string;
+  slug: string;
+  description_raw: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
