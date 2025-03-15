@@ -10,14 +10,14 @@ const GameTrailer = ({ gameId }: Props) => {
 
   if (isLoading) return <Spinner />;
 
-  if (error || !trailers) throw error;
+  if (error) throw error;
 
-  const latest = trailers.results[0];
+  const latest = trailers?.results[0];
 
   return latest ? (
-    <AspectRatio maxWidth="2xl" ratio={16 / 9}>
+    // <AspectRatio maxWidth="2xl" ratio={16 / 9}>
       <video src={latest.data["480"]} poster={latest.preview} controls />
-    </AspectRatio>
+    // </AspectRatio>
   ) : null;
 };
 
