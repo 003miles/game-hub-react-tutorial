@@ -1,12 +1,14 @@
 import {
-  Button, Heading,
+  Button,
+  Heading,
   HStack,
   Image,
   List,
   ListItem,
-  SkeletonCircle
+  SkeletonCircle,
 } from "@chakra-ui/react";
-import useGenres, { Genre } from "../hooks/useGenres";
+import useGenres from "../hooks/useGenres";
+import { Genre } from "../entities/Genre";
 import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
 
@@ -14,8 +16,8 @@ const GenreList = () => {
   const { data, isLoading, error } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
-  const selectedGenreId = useGameQueryStore(s => s.gameQuery.genreId)
-  const setSelectedGenreId = useGameQueryStore(s => s.setGenreId)
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return null;
 
