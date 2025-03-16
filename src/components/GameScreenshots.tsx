@@ -12,8 +12,6 @@ const GameScreenshots = ({ gameId }: Props) => {
 
   if (error) throw error;
 
-  console.log(screenshots);
-
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} padding="10px">
       {screenshots?.results.map((s) => (
